@@ -1,10 +1,17 @@
 
 function renderNametags(nametags) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(nametags)}</code>
+    let name =''
+    for(let i =0; i < nametags.length; i++){
+        name += `
+        <div style="text-align:center;background-color:grey>
+        <h1 style="text-align:center;">Hello, my name is:</h1>
+        <div style="background-color:black;">
+            <h2 style="text-align:center; color:white">${nametags[i]}</h2>
         </div>
-    `
+        </div>
+        `
+    }
+    return name
 }
 
 function nametags() {

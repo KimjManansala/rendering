@@ -1,1 +1,9 @@
 /* Type whatever CSS you need here! */
+
+
+.tracksContainer{
+    display: flex;
+    justify-content: space-between;
+
+
+}

@@ -1,24 +1,53 @@
+//Renders the albums
 
-function renderAlbums(albums) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
-        </div>
-    `
+
+function renderAlbums(albumsAbstraction) {
+    let renderString = '' //Create the string to return
+    for (let i = 0; i < albumsAbstraction.length; i++) {
+        //addes the Artist
+        renderString += `
+        <h1> ${albumsAbstraction[i].artist}</h1>    
+        <hr>
+        `
+        //Creates each album
+        for (let j = 0; j < albumsAbstraction[i].albums.length; j++) {
+            renderString += `
+            <img href = ${albumsAbstraction[i].albums[j].albumCover}>
+            <h3>${albumsAbstraction[i].albums[j].title}</h3>
+            `
+            //Creates songs and time
+            for (let k = 0; k < albumsAbstraction[i].albums[j].songs.length; k++) {
+                renderString += `
+                <div class ="tracksContainer">
+                    <div>${albumsAbstraction[i].albums[j].songs[k].title}</div>
+                    <div>${albumsAbstraction[i].albums[j].songs[k].length}</div>
+                </div>
+                `
+            }
+        }
+    }
+    return renderString
+
 }
+
+
+
+
+
+
+
+
+
 
 function albums() {
     var content = document.getElementById('content');
 
-    var albumsAbstraction = [
-        {
+    var albumsAbstraction = [{
             artist: "Creed",
-            albums: [
-                {
+            albums: [{
                     title: "My Own Prison",
                     albumCover: "https://images-na.ssl-images-amazon.com/images/I/51Y5ZCMV2QL.jpg",
-                    songs: [
-                        {
+                    songs: [{
                             title: "Torn",
                             length: "6:25"
                         },
@@ -48,8 +77,7 @@ function albums() {
                 {
                     title: "Weathered",
                     albumCover: "https://is5-ssl.mzstatic.com/image/thumb/Music22/v4/b1/a4/a9/b1a4a9dd-ecda-6233-07da-f53848d37bdf/mzm.qakvcpwo.jpg/1200x630bb.jpg",
-                    songs: [
-                        {
+                    songs: [{
                             title: "Bullets",
                             length: "6:25"
                         },
@@ -76,7 +104,9 @@ function albums() {
                     ]
                 }
             ]
-        }
+        },
+
+
     ]
 
     content.innerHTML = renderAlbums(albumsAbstraction);
