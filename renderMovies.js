@@ -1,17 +1,39 @@
-
 function renderMovies(movies) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
-        </div>
+    let rendering = '';
+
+    for (let i = 0; i < movies.length; i++) {
+        rendering += `
+        <div class="movie-container">
+            <img src= "${movies[i].poster}">
+            <div class="movie-info">
+                <div class="movie-title-info">
+                    <h1>${movies[i].title}</h1>
+                    <h6>${movies[i].year}</h6>
+                </div>
+                <div class="movie-rating">
+                    <h1>IMDB:</h1>
+                    <h6>${movies[i].imdbRating}</h6>
+                </div>
+                <div class="movie-rating">
+                    <h1>Rotten Tomatoes:</h1>
+                    <h6>${movies[i].rottenTomatoesRating}</h6>
+                </div>
+            </div>
+    </div>
     `
+        
+    }
+    console.log(rendering)
+    return rendering;
 }
+
+
+
 
 function movies() {
     var content = document.getElementById('content');
 
-    var moviesAbstraction = [
-        {
+    var moviesAbstraction = [{
             title: "The Dark Knight",
             year: 2008,
             imdbID: "tt0468569",

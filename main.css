@@ -7,3 +7,48 @@
 
 
 }
+.restaurants-container{
+    display: flex;
+}
+.dollarRating{
+    display: inline;
+}
+
+
+.movie-container{
+    display: flex;
+    margin: 10px;
+    justify-content: space-around;
+}
+
+
+.tweet-container{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    border-style: solid;
+    border-width: 5px;
+}
+.twitter-top{
+    display: flex;
+    justify-content: flex-start;
+}
+.twitter-profile{
+    margin: 10px;
+}
+.twitter-handle{
+    display: flex;
+    flex-direction: column;
+}
+.tweet{
+    font-size: 30px;
+}
+
+.twitter-bottom{
+    display: flex;
+    text-align: center;
+}
+
+.username{
+    display: flex;
+}

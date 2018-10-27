@@ -12,7 +12,7 @@ function renderAlbums(albumsAbstraction) {
         //Creates each album
         for (let j = 0; j < albumsAbstraction[i].albums.length; j++) {
             renderString += `
-            <img href = ${albumsAbstraction[i].albums[j].albumCover}>
+            <img src = "${albumsAbstraction[i].albums[j].albumCover}" style = "width: 250px; height: 250px;">
             <h3>${albumsAbstraction[i].albums[j].title}</h3>
             `
             //Creates songs and time

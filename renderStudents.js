@@ -1,10 +1,32 @@
-
 function renderStudents(students) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(students)}</code>
-        </div>
-    `
+    console.log(students);
+    let renderString = ''
+
+    renderString += `<div class='container'>
+        <h1 style="text-align:center;">Roll Call</h1>`
+    for (let i = 0; i < students.length; i++) {
+        if (students[i].isPresent) {
+
+            renderString += `
+                <div class='studentContainer' style ="background-color: green;">
+                    <h2 style="text-align:center;">${students[i].name}</h2>
+                    <h5>Present</h5>
+                </div>
+                `
+        } else {
+            renderString += `
+                <div class='studentContainer' style ="background-color: red;">
+                <h2 style="text-align:center;">${students[i].name}</h2>
+                <h5>Absent</h5>
+                </div>
+            `
+        }
+    }
+
+    renderString += '</div>'
+
+    return renderString
+    
 }
 
 function students() {
